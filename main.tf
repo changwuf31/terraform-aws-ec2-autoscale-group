@@ -43,6 +43,15 @@ resource "aws_launch_template" "default" {
     security_groups             = ["${var.security_group_ids}"]
   }
 
+  block_device_mappings {
+    device_name = "/dev/xvda"
+    ebs {
+      volume_size = "${var.root_ebs_size}"
+      volume_type = "gp2"
+      delete_on_termination = "true"
+    }
+  }
+
   tag_specifications {
     resource_type = "volume"
     tags          = "${module.label.tags}"

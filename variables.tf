@@ -353,3 +353,9 @@ variable "cpu_utilization_low_statistic" {
   default     = "Average"
   description = "The statistic to apply to the alarm's associated metric. Either of the following is supported: `SampleCount`, `Average`, `Sum`, `Minimum`, `Maximum`"
 }
+
+variable "root_ebs_size" {
+  type        = "string"
+  default     = "8"
+  description = "Root EBS Size"
+}
