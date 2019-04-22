@@ -99,7 +99,7 @@ resource "aws_autoscaling_group" "default" {
     version = "${aws_launch_template.default.latest_version}"
   }
 
-  tags = "${module.label.tags}"
+  tags = "[${module.label.tags}]"
 #  tags = ["${data.null_data_source.tags_as_list_of_maps.*.outputs}"]
 
   lifecycle {
